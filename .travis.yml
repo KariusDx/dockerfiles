@@ -1,5 +1,5 @@
 sudo: required
-language: go
+language: c
 dist: trusty
 services: docker
 
