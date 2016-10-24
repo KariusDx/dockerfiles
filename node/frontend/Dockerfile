@@ -1,4 +1,5 @@
-FROM node:6.7
+# Node v6.9.0 Long Term Support (LTS) with the codename "Boron"
+FROM node:6.9
 
 RUN apt-get update && apt-get install -y sudo wget && apt-get clean
 ENV LANG   C.UTF-8
@@ -8,6 +9,9 @@ ENV PATH=./node_modules/.bin:$PATH
 # Help propagate SIGTERM from host machine
 RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.0.0/dumb-init_1.0.0_amd64
 RUN chmod +x /usr/local/bin/dumb-init
+
+# Install YARN 
+RUN npm install --global yarn
 
 # Define entrypoint
 ENTRYPOINT ["/usr/local/bin/dumb-init"]
