@@ -4,7 +4,7 @@ A [Dockerized](https://hub.docker.com/r/rjocoleman/mode-bridge/) [Bridge Connect
 
 *Features:*
 
-* Based on Ubuntu 16.04
+* Based on debian:jessie-slim
 * Downloads the [latest bridge package](https://packagecloud.io/modeanalytics) on on build.
 * Not demonized.
 * Configured via Environment variables.

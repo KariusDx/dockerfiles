@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM debian:jessie-slim
 
 RUN apt-get update; \
  apt-get -y install curl; \
@@ -7,6 +7,7 @@ RUN apt-get update; \
 RUN curl -L https://packagecloud.io/install/repositories/modeanalytics/main/script.deb.sh | bash; \
  apt-get update; \
  apt-get -y install mode-bridge; \
+ apt-get clean; \
  rm -rf /var/lib/apt/lists/*;
 
 CMD ["/opt/mode/bridge/bin/mode-bridge"]
